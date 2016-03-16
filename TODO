@@ -1,0 +1,13 @@
+
+Implement released_before/_after then add to README:
+
+    # And compare versions based on age
+    >>> from datetime import date
+    >>> v1 = Version('Foobar', 1, 2, release_date = date(2009, 5, 1))
+    >>> v1.released_before(date(2010, 1, 1)) 
+    True
+    >>> v2 = Version('Foobar', 1, 3, release_date = date(2009, 9, 1))
+    >>> v2.released_after(v1)
+    True
+    >>> v2.older_than('2 years')
+    True    # assuming you're not living in the past :o)
